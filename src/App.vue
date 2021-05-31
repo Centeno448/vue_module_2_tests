@@ -2,7 +2,8 @@
   <h1>Bienvenido al curso de Vue</h1>
   <div class="notas">
     <nav>
-      <ul>
+    <p v-if="!notas.length">  No hay notas guardadas </p>
+      <ul v-if="notas.length">
         <li v-for="nota in notas" v-bind:key="nota.titulo">
           {{ nota.titulo }}
         </li>
